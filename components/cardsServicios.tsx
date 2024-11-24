@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
+import Image from "next/image";
 
 interface ServiciosProps {
   servicios: {
@@ -18,7 +19,12 @@ export default function CardsServicios({ servicios }: ServiciosProps) {
           key={servicio.id}
           className="relative group hover:after:content-[''] after:absolute after:inset-0 hover:after:bg-black/60 hover:after:transition-all hover:after:duration-200"
         >
-          <img src={servicio.imagen} alt={servicio.imagen} />
+          <Image
+            src={servicio.imagen}
+            width="420"
+            height="420"
+            alt={servicio.imagen}
+          />
           <h3 className="text-white group-hover:opacity-0 opacity-100 transition-opacity duration-500 absolute bottom-3 ml-3 raleway-semibold text-lg">
             {servicio.nombre}
           </h3>

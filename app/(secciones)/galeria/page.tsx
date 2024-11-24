@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { categorias, proyectos } from "@/data/dataGaleria";
 import React, { useState } from "react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 export default function GaleriaPage() {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
@@ -53,10 +54,11 @@ export default function GaleriaPage() {
               }}
               layout
             >
-              <img
+              <Image
                 src={proyecto.imagen}
                 height="500"
                 width="500"
+                alt="imagen de proyecto"
                 className="h-full w-full object-cover"
               />
             </motion.div>

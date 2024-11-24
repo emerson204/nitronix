@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { testimoniosData } from "@/data/testimoniosData";
 import { Separator } from "./ui/separator";
+import Image from "next/image";
 
 export default function CarouselTestimonios() {
   return (
@@ -33,7 +34,7 @@ export default function CarouselTestimonios() {
               className="md:basis-1/2 lg:basis-1/3 text-white md:px-8 pr-3  flex flex-col "
             >
               <div className="flex items-center gap-5">
-                <img
+                <Image
                   src={testimonio.imagen}
                   alt="perfil1"
                   width="50"

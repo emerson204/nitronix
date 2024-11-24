@@ -7,7 +7,7 @@ export default function TopBoton() {
   const [isScroll, setIsScroll] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY >= window.innerHeight - -500) {
+    if (window.scrollY >= window.innerHeight - -200) {
       setIsScroll(true);
     } else {
       setIsScroll(false);

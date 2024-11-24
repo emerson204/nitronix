@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
-import Contenedor from "./contenedor";
 import HeadingSecciones from "./headingSecciones";
-import { logosCars } from "@/data/logosCars";
 import CarouselBrands from "./carouselBrands";
 
 export default function Marcas() {

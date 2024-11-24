@@ -1,6 +1,7 @@
 import BtnConecta from "@/components/btnConecta";
 import Contenedor from "@/components/contenedor";
 import HeadingSecciones from "@/components/headingSecciones";
+import Image from "next/image";
 import React from "react";
 
 export default function Elegirnos() {
@@ -21,7 +22,7 @@ export default function Elegirnos() {
           <BtnConecta />
         </div>
         <div data-aos="flip-left">
-          <img
+          <Image
             src="https://res.cloudinary.com/dgqi1bsbv/image/upload/f_auto,q_auto/v1732310729/elegirnos_a9j9jj.jpg"
             alt="imagenes de persona reparando un auto rojo"
             width="500"

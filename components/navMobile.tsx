@@ -7,7 +7,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import NavBar from "./navBar";
 import Logo from "./logo";
@@ -20,12 +20,12 @@ export default function NavMobile() {
 
   // Para cerrar automaticamente el sheet en pantallas grandes , primero creamos una funcion
   // El Sheet se cierre automáticamente al cambiar de tamaño. Esto ya lo tienes resuelto con tu handleResize.
-  const handleResize = () => {
+  const handleResize = useCallback(() => {
     // Si no es mobile osea si no es menor a 768 y el open es True
     if (!isMobile() && open) {
       setOpen(false);
     }
-  };
+  }, [open]);
 
   // Luego usamos useEffect
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function NavMobile() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [open]); // "Ejecuta este useEffect solo si cambia el valor de open."
+  }, [handleResize]); // "Ejecuta este useEffect solo si cambia el valor de open."
 
   // Esto es para que el Sheet no abra si la pantalla es grande. Esto se controla en onOpenChange validando el tamaño de la pantalla.
   const handleOpenChange = (state: boolean) => {
