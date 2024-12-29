@@ -1,13 +1,18 @@
 import { navItems } from "@/data/navItems";
 import Link from "next/link";
 
-export default function NavBar() {
+interface ClickProps {
+  onClickLink: () => void;
+}
+
+export default function NavBar({ onClickLink }: ClickProps) {
   return (
     <ul className="flex flex-col items-start md:flex-row gap-10 md:gap-12 md:items-center pl-5 md:pl-0 pt-8 md:pt-0">
       {navItems.map((item) => (
         <li
           key={item.id}
           className="relative w-[35%] min-w-[6rem] md:w-auto md:min-w-0 text-left md:text-center"
+          onClick={onClickLink}
         >
           <Link
             href={item.url}

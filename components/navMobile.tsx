@@ -11,6 +11,7 @@ import { useCallback, useEffect, useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import NavBar from "./navBar";
 import Logo from "./logo";
+import { set } from "react-hook-form";
 
 export default function NavMobile() {
   const [open, setOpen] = useState(false);
@@ -46,6 +47,11 @@ export default function NavMobile() {
       setOpen(state);
     }
   };
+
+  const onClickLink = () => {
+    setOpen(false);
+  };
+
   return (
     <nav>
       {/* El componente Sheet utiliza la propiedad onOpenChange para manejar el cambio de estado (abierto o cerrado). 
@@ -63,7 +69,7 @@ export default function NavMobile() {
               <Logo ruta="logomobil" />
             </SheetTitle>
             <SheetDescription asChild>
-              <NavBar />
+              <NavBar onClickLink={onClickLink} />
             </SheetDescription>
           </SheetHeader>
         </SheetContent>
