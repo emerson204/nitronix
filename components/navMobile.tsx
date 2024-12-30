@@ -11,7 +11,6 @@ import { useCallback, useEffect, useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import NavBar from "./navBar";
 import Logo from "./logo";
-import { set } from "react-hook-form";
 
 export default function NavMobile() {
   const [open, setOpen] = useState(false);
