@@ -13,7 +13,7 @@ import NavBar from "./navBar";
 import Logo from "./logo";
 
 export default function NavMobile() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false); // eslint-disable-line @typescript-eslint/no-unused-vars
 
   // Verifica si es móvil , osea aca esta verificando si es menor a 768 osea si es mobile
   const isMobile = () => window.innerWidth < 768;
