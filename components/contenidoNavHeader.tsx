@@ -2,18 +2,27 @@
 
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
+import { AlignJustify } from "lucide-react";
 import NavBar from "./navBar";
-import NavMobile from "./navMobile";
 import Logo from "./logo";
+import { useState } from "react";
 
 export default function ContenidoNavHeader() {
+  const [open, setOpen] = useState(false);
+
+  const handleMenu = () => {
+    setOpen(!open);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div className="flex justify-between text-white items-center py-4 max-w-[78rem] mx-auto px-5">
       <Logo ruta="logoni" />
 
-      <nav className="md:flex hidden">
-        <NavBar />
-      </nav>
+      <NavBar open={open} handleClose={handleClose} />
 
       <Link
         href="/contacto"
@@ -25,7 +34,11 @@ export default function ContenidoNavHeader() {
       </Link>
 
       <div className="md:hidden">
-        <NavMobile />
+        <AlignJustify
+          className={`md:hidden ${open ? "hidden" : "block"} `}
+          onClick={handleMenu}
+          size={30}
+        />
       </div>
     </div>
   );
